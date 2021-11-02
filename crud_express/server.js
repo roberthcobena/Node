@@ -7,7 +7,7 @@ app.listen(3000, function() {
     console.log('listening on ' + port)
 });
 //CONEXION
-MongoClient.connect('mongodb://localhost/crud-express', { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+MongoClient.connect('mongodb://localhost/crud', { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
     if (err) return console.error(err)
     console.log('Connected to Database')
 })
@@ -20,10 +20,10 @@ MongoClient.connect('mongodb://localhost/crud-express', { useNewUrlParser: true,
 //VARIABLES para Métodos CRUD
 let db;
 let collection;
-MongoClient.connect('mongodb://localhost/crud-express', { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+MongoClient.connect('mongodb://localhost/crud', { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
     if (err) return console.error(err)
     console.log('Connected to Database')
-    db = client.db('crud-express')
+    db = client.db('crud')
     collection = db.collection('product')
 })
 
